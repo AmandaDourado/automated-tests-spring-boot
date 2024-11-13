@@ -112,13 +112,12 @@ public class PlanetServiceTest {
 
     @Test
     public void removePlanet_WithExistingId_doesNotThrowAnyException() {
-        //assertThatCode verificar se não lança nenhuma execeção
+        //assertThatCode verifica se não lança nenhuma exceção
         assertThatCode(() -> planetService.remove(1L)).doesNotThrowAnyException();
     }
 
     @Test
     public void removePlanet_WithUnexistingId_ThrowsException() {
-
         Mockito.doThrow(new RuntimeException()).when(planetRepository).deleteById(99L);
         assertThatThrownBy(() -> planetService.remove(99l)).isInstanceOf(RuntimeException.class);
     }

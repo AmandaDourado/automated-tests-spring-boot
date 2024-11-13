@@ -2,6 +2,7 @@ package com.automatedtestingcourse.demo.web;
 
 import com.automatedtestingcourse.demo.domain.Planet;
 import com.automatedtestingcourse.demo.domain.PlanetService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,18 +18,18 @@ public class PlanetController {
     private PlanetService planetService;
 
     @PostMapping
-    public ResponseEntity<Planet> create(@RequestBody Planet planet){
+    public ResponseEntity<Planet> create(@RequestBody @Valid Planet planet) {
         Planet planetCreated = planetService.create(planet);
         return ResponseEntity.status(HttpStatus.CREATED).body(planetCreated);
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Planet> getById(@PathVariable("id") Long id) {
         return planetService.findById(id).map(planet -> ResponseEntity.ok(planet))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("{/name/{name}")
+    @GetMapping("/name/{name}")
     public ResponseEntity<Planet> getByName(@PathVariable("name") String name) {
         return planetService.findByName(name).map(planet -> ResponseEntity.ok(planet))
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -40,7 +41,7 @@ public class PlanetController {
         return ResponseEntity.ok(planets);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> remove (@PathVariable("id") Long id) {
         planetService.remove(id);
         return ResponseEntity.noContent().build();
