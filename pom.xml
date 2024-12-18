@@ -58,6 +58,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>0.16</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -118,6 +124,21 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!--  ./mvnw test-compile org.pitest:pitest-maven:mutationCoverage -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.8.0</version>
+                <configuration>
+                    <targetTests>
+                        <param>com.automatedtestingcourse.demo.*Test</param>
+                    </targetTests>
+                    <excludedClasses>
+                        <param>com.automatedtestingcourse.demo.domain.Planet</param>
+                    </excludedClasses>
+                </configuration>
             </plugin>
 
         </plugins>
