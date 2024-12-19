@@ -85,6 +85,5 @@ class AutomatedtestingcourseApplicationTestsIT {
 
 		assertThat(sut.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
     }
-
-
+    
 }
