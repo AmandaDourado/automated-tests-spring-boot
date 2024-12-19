@@ -2,20 +2,6 @@
   StarWars Planet API (sw-planet-api)
 </h1>
 
-<p align="center">
-  <a href="#-technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-configuration">Configuração</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-developing">Construir e Executar</a>
-</p>
-
-<p align="center">
-  <img alt="Licença" src="[https://img.shields.io/static/v1?label=Licença&message=MIT&color=8257E5&labelColor=000000"](https://www.udemy.com/certificate/UC-2ccee40e-a861-4536-8366-b5dbeb9e3405/)>
-  <img src="https://img.shields.io/static/v1?label=Curso na Udemy&message=Testes automatizados na prática com Spring Boot&color=8257E5&labelColor=000000" alt="Testes automatizados na prática com Spring Boot" />
-</p>
-
-<br>
-
 ## ✨ Technologies
 
 - [Mysql](https://dev.mysql.com/downloads/mysql/)
